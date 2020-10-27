@@ -50,7 +50,7 @@ def fetchTootsLoop(domain, access_token, account_id, params, loop):
             for x in req:
                 last_id = x['id']
                 print(x['content'])
-                if x['visibility'] == 'private' or x['visibility'] == 'direct':
+                if x['visibility'] == 'direct':
                     print("鍵投稿のためスキップしました。 {}".format(x['content']))
                     continue
                 seikei = re.compile(r"<[^>]*?>").sub("", x['content'])

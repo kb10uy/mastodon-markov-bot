@@ -37,7 +37,7 @@ def worker():
         sentence = re.sub(r'(:.*?:)', r' \1 ', sentence)
         print(sentence)
     try:
-        mastodonTool.post_toot(domain, write_access_token, {"status": sentence})
+        mastodonTool.post_toot(domain, write_access_token, {"status": sentence, "visibility": "unlisted"})
     except Exception as e:
         print("投稿エラー: {}".format(e))
 
